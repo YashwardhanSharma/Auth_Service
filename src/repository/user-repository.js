@@ -1,4 +1,5 @@
 const {User} = require('../models/index');
+const user = require('../models/user');
 
 class UserRepository {
 async create(data){
@@ -19,6 +20,18 @@ async destroy(userId){
         }
       });
         return true;
+    } catch (error) {
+        console.log("Somthing went wrong on repository layer");
+        throw error;
+    }
+}
+
+async getById(userId){
+    try {
+        const user = await User.findByPk(userId,{
+            attributes:['email','id']
+        });
+        return user;
     } catch (error) {
         console.log("Somthing went wrong on repository layer");
         throw error;
