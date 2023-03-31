@@ -13,5 +13,9 @@ router.get('/isAuthenticated',UserController.isAuthenticated);
 //         message:'ok'
 //     });
 // })
+router.get(
+    '/isAdmin',AuthRequestValidators.validateIsAdminRequest,
+    UserController.isAdmin
+);
 
 module.exports=router;

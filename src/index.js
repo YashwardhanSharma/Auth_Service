@@ -22,13 +22,6 @@ app.listen(PORT,async ()=>{
     if(process.env.DB_SYNC){
       db.sequelize.sync({alter:true});
     }
- 
-    // const service = new UserService();
-    // const newToken =  service.createToken({email:'yash@gmail.com',id:1});
-    // console.log("New token is",newToken);
-    //  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc2hAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY4MDAyMzg0MywiZXhwIjoxNjgwMDIzODczfQ.j9r_yQ_YcS0Fs4NEziKjgYy0htQHZWaduvcmbyhNO3A';
-    //  const response = service.verifyToken(token);
-    //  console.log(response);
 });
 }
 
